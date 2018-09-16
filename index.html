@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="profile">
+        <div class="user_profile"></div>
+    </div>
+    <div class="hamburger_menu">
+        <nav role="navigation">
+            <div id="menuToggle">
+
+                <input type="checkbox" />
+
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <ul id="menu">
+                    <a href="#"><li>Home</li></a>
+                    <a href="#"><li>Profile</li></a>
+                    <a href="#"><li>Settings</li></a>
+                    <a href="#"><li>Log Out</li></a>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="sections">
+        <div class="kea">
+            <div class="logo"></div>
+            <div class="icons">
+
+                <div class="icon1"></div>
+                <h3> Front-end design</h3>
+                <div class="icon2"></div>
+                <h3> Students</h3>
+                <div class="icon3"></div>
+                <h3> Materials</h3>
+            </div>
+        </div>
+        <div class="student_details">
+            <img class="image_student" src="images/student.jpg" alt="student">
+            <h2 class="full_name">STUDENT NAME</h2>
+            <div class="grey_container">
+                <p> Lorem ipsum dolor sit amet, orci consectetur aliquam nulla. Magna et, sed mi felis nibh amet dui, nulla
+                    odio magna elit at metus. Viverra elit commodo montes id morbi, est tellus aenean convallis nulla praesent
+                    vestibulum, at voluptate odio duis. Per accumsan tristique metus, aliquam velit. Cillum leo non, aenean
+                    reprehenderit eget convallis dictumst donec, mattis non lorem nunc scelerisque magnis, vel vehicula.
+                    Placerat ante praesent posuere ut congue scelerisque, turpis massa arcu sed a libero congue, eleifend
+                    ipsum neque orci erat justo, velit vel suspendisse ligula vulputate justo pede, tortor nullam non repellendus.
+                    Nulla tincidunt sodales nulla luctus fusce, convallis lorem quam montes, sodales tristique iaculis. Sapien
+                    urna nulla consectetuer. Purus aliquam tellus pretium nullam rhoncus, orci amet, elit vestibulum, ut
+                    est orci.
+                </p>
+                <div class="icons_details">
+                    <img class="close" src="images/close.png" onmouseover="this.src='images/close_hover.png';" onmouseout="this.src='images/close.png';"
+                        onclick="closeDetails()" alt="close_button">
+                    <img class="trash" onmouseover="this.src='images/trash_cover.png';" onmouseout="this.src='images/trasg.png';" src="images/trasg.png"
+                        alt="trash">
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <h1>Student List</h1>
+
+            <section onmouseover="showLi()" onmouseout="hideLi()" id="buttons">
+                <div id="sorting">
+                    <img class="sorting_button" src="images/sort.png" alt="sorting button">
+                    <div class="box">
+                        <li id="sort_first">first name</li>
+                        <li id="sort_last"> last name </li>
+                    </div>
+                </div>
+
+            </section>
+            <table id="Studentlist">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th> </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Harry</td>
+                        <td> Middle name</td>
+                        <td>Potter</td>
+                        <td><img class="trash" onmouseover="this.src='images/trash_cover.png';" onmouseout="this.src='images/trasg.png';"
+                                src="images/trasg.png" alt="trash"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <template id="student_template">
+                <tr>
+                    <td data-firstname onclick="openDetails()">FIRSTNAME</td>
+                    <td data-middlename onclick="openDetails()">MIDDLENAME</td>
+                    <td data-lastname onclick="openDetails()">LASTNAME</td>
+                    <td><img class="trash" onmouseover="this.src='images/trash_cover.png';" onmouseout="this.src='images/trash2.png';"
+                            src="images/trash2.png" alt="trash"></td>
+                </tr>
+            </template>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

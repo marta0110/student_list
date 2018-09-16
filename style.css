@@ -1,0 +1,488 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  width: 100vw;
+  height: auto;
+  overflow-x: hidden;
+}
+
+/*hamburger menu code */
+a {
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: tomato;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 5vh;
+  left: 5vw;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+.kea {
+  background-color: #9fcecb;
+  width: 100vw;
+  height: 30vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.kea .logo {
+  background-image: url("images/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50vw;
+  height: auto;
+  max-width: 50vw;
+  max-height: 10vh;
+}
+
+.kea .icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 7vw;
+  grid-row-gap: 2vh;
+  justify-items: center;
+  padding-top: 5vh;
+}
+.kea .icon1 {
+  background-image: url("images/icon1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 13vw;
+  height: auto;
+  max-width: 15vw;
+  max-height: 10vh;
+  cursor: pointer;
+  order: 1;
+}
+
+.kea .icon1:hover {
+  background-image: url("images/icon1_hover.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 13vw;
+  height: auto;
+  max-width: 15vw;
+  max-height: 10vh;
+  cursor: pointer;
+  order: 1;
+}
+
+.icons h3 {
+  order: 4;
+  cursor: pointer;
+}
+
+.icons h3:hover {
+  color: #232323;
+}
+
+h3:nth-child(2) {
+  color: #232323;
+}
+.kea .icon2 {
+  background-image: url("images/icon2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 15vw;
+  height: auto;
+  max-width: 15vw;
+  max-height: 10vh;
+  cursor: pointer;
+  order: 2;
+}
+
+.kea .icon3 {
+  background-image: url("images/icon3.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 15vw;
+  height: auto;
+  max-width: 15vw;
+  max-height: 10vh;
+  cursor: pointer;
+  order: 3;
+}
+
+.student_details {
+  background-color: grey;
+  width: 100vw;
+  height: auto;
+}
+
+.list {
+  width: 100vw;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media only screen and (min-width: 650px) {
+  .sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .hamburger_menu {
+    display: none;
+  }
+  .profile {
+    background-color: white;
+    width: 85vw;
+    position: fixed;
+    right: 0;
+    height: 10vh;
+    z-index: 5;
+  }
+  .user_profile {
+    background-image: url("images/user_profile.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20vw;
+    height: 10vh;
+    cursor: pointer;
+    display: block;
+    right: 3vw;
+    position: absolute;
+    margin-top: 2vh;
+    position: fixed;
+  }
+
+  .kea {
+    background-color: #9fcecb;
+    width: 15vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    left: 0;
+    padding-top: 5vh;
+    order: 1;
+    position: fixed;
+  }
+  .kea .logo {
+    background-image: url("images/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 15vw;
+    height: 20vh;
+    max-width: 10vw;
+    max-height: 20vh;
+  }
+
+  .kea .icons {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin: 0 auto;
+    height: 40vw;
+    grid-column-gap: 2vh;
+  }
+
+  .kea .icons h3 {
+    height: 5vh;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: white;
+  }
+
+  .kea .icons .icon1 {
+    order: 1;
+    width: 10vw;
+    margin-left: 6vw;
+  }
+
+  h3:nth-of-type(1) {
+    order: 2;
+  }
+  .kea .icons .icon2 {
+    background-image: url("images/icon2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 10vw;
+    height: auto;
+    max-width: 10vw;
+    max-height: 10vh;
+    cursor: pointer;
+    order: 3;
+    justify-self: center;
+    margin-left: 6vw;
+  }
+  h3:nth-of-type(2) {
+    order: 4;
+  }
+  .kea .icons .icon3 {
+    background-image: url("images/icon3.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 10vw;
+    height: auto;
+    max-width: 10vw;
+    max-height: 10vh;
+    cursor: pointer;
+    order: 5;
+    justify-self: center;
+    margin-left: 6vw;
+  }
+
+  h3:nth-of-type(3) {
+    order: 6;
+  }
+
+  .student_details {
+    z-index: 5;
+    position: fixed;
+    width: 0;
+    height: 80vh;
+    right: 0;
+    background-color: white;
+    order: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20vh;
+    z-index: 3;
+    overflow-x: hidden;
+    transition: 0.8s;
+  }
+  .student_details .image_student {
+    width: 20vw;
+    height: auto;
+    z-index: 2;
+    padding-left: 5vw;
+  }
+
+  .student_details h2 {
+    font-family: "Poiret One", "sans-serif";
+    color: #f5a623;
+    margin-top: 5vh;
+    font-size: 2vw;
+    z-index: 2;
+  }
+
+  .student_details .grey_container {
+    background-color: #f9f9f9;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-family: "Poiret One", "sans-serif";
+    font-weight: 100;
+    padding-top: 14vh;
+    margin-top: -8vh;
+    z-index: 1;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .student_details .grey_container p {
+    padding-bottom: 10vh;
+    padding-top: 5vh;
+    font-size: 1.3vw;
+    line-height: 3vh;
+  }
+
+  .student_details .grey_container .icons_details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2vw;
+  }
+  .student_details .grey_container .trash {
+    width: 1.5vw;
+    height: auto;
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+
+  .student_details .grey_container .close {
+    width: 1.5vw;
+    height: auto;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    justify-self: end;
+    margin-top: 0.5vh;
+  }
+  .list {
+    width: 85vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 20vh;
+    order: 2;
+    transition: margin-right 1s;
+    margin-left: 15vw;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .list h1 {
+    font-family: "Poiret One", "sans-serif";
+    font-size: 2vw;
+    border: 1px solid white;
+    height: 5vh;
+    justify-self: center;
+    padding-bottom: 1vw;
+    align-self: start;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: #8fb3b2;
+    z-index: 4;
+  }
+
+  #Studentlist {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 2vw;
+    font-family: "Poiret One", "sans-serif";
+    font-weight: 100;
+    font-size: 1.3vw;
+    background-color: #8fb3b2;
+    margin-top: -8vh;
+    padding-top: 15vh;
+  }
+
+  #Studentlist tr:hover {
+    color: #ef8a00;
+    cursor: pointer;
+  }
+  #Studentlist tr td img {
+    width: 1.5vw;
+    height: auto;
+  }
+
+  #buttons {
+    justify-self: end;
+    padding-right: 3vw;
+    padding-top: 0.5vw;
+  }
+  .sorting_button {
+    width: 4vw;
+    height: auto;
+    cursor: pointer;
+    position: relative;
+    background-color: #8fb3b2;
+  }
+
+  .box {
+    position: absolute;
+    z-index: 5;
+  }
+  li {
+    display: none;
+    cursor: pointer;
+    background-color: #9fcecb;
+    max-width: 9vw;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    font-family: "Poiret One", "sans-serif";
+    font-weight: 100;
+    letter-spacing: 3px;
+    font-size: 1.2vw;
+    padding: 1vw;
+  }
+
+  li:hover {
+    color: darksalmon;
+  }
+
+  .box:hover .sorting_button {
+    background-image: url("images/sort_1.png");
+    width: 4vw;
+    height: auto;
+  }
+}
